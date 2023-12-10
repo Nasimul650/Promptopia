@@ -11,6 +11,7 @@ const CreatePrompt = () => {
 
     const [submitting, setsubmitting] = useState(false)
     const [post, setPost] = useState({
+        title: '',
         prompt: '',
         tag: '',
     })
@@ -24,6 +25,7 @@ const CreatePrompt = () => {
       {
       method: 'POST',
       body: JSON.stringify({
+        title: post.title,
         prompt: post.prompt,
         userId: session?.user.id,
         tag: post.tag
